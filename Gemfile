@@ -30,8 +30,11 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
-#use HttParty to make API calls
+# Use HttParty to make API calls
 gem 'httparty', '~> 0.20.0'
+
+# Use devise for autentication
+gem 'devise', '~> 4.2'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
