@@ -1,24 +1,21 @@
-# README
+# Detalhes do projeto
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto roda em **Ruby** na versão`3.0.2` utilizando **Rails** `7.0.3`. Se precisar você pode utilizar um gerenciador de versões para facilitar como o [ASDF](https://www.lucascaton.com.br/2020/02/17/instalacao-do-ruby-do-nodejs-no-ubuntu-linux-usando-asdf).
 
-Things you may want to cover:
+## Configuração
 
-* Ruby version
+Neste projeto, estamos usando o Sqlite, se você precisar alterá-los para rodar em sua maquina local, você pode fazê-lo em [database.yml](config/database.yml).
 
-* System dependencies
+Para executar o projeto siga os passos a abaixo:
 
-* Configuration
+```console
+$ bundle install
+$ bin/rails db:create db:migrate
+$ bin/rails server
+```
 
-* Database creation
+Para qualidade de código e linter, foi utilizado as gens rubocop, rubocop-rails, para rodar use o comando abaixo:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```console
+$ bin/rails rubocop
+```
