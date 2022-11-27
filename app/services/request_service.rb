@@ -9,10 +9,16 @@ class RequestService < ApplicationService
   end
 
   def call
-    request(method, path, default_options)
+    format_response
   end
 
   private
+
+  def format_response
+    request(method, path, default_options)
+
+    JSON.parse(response.body, symbolize_names: true, object_class: OpenStruct)
+  end
 
   def default_url(path)
     URI.join(ENV["BASE_URL"], path).to_s
@@ -30,7 +36,5 @@ class RequestService < ApplicationService
     @response = HTTParty.send(method, default_url(path), options)
 
     raise BadRequest if response.bad_request?
-
-    response
   end
 end
