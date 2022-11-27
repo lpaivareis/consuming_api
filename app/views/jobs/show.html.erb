@@ -5,7 +5,7 @@
         <%= image_tag @job.clinic.image, class: "card-img-top rounded-3 shadow-sm job-image", style: "max-width:416px;max-height:272px" %>
       </div>
       <div class="text-center">
-        <%= link_to "Me candidatar", "#", class: "btn btn-primary mt-3" %>
+        <%= button_to "Me candidatar", apply_job_path(@job.id), class: "btn btn-primary mt-3", :method => :post %>
       </div>
     </div>
     <div class="col-md-8">

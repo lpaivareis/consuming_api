@@ -11,9 +11,9 @@ class JobsController < ApplicationController
 
   def user_apply_job
     if ApplyJobService.call(job_params[:id], current_user.id).present?
-      flash[:notice] = "You have successfully applied for this job"
+      redirect_to job_path(job_params[:id]), flash:{ notice: "Você se candidatou com sucesso." }
     else
-      flash[:error] = "You already applied for this job"
+      redirect_to job_path(job_params[:id]), flash:{ notice: "Você ja está candidatado nessa vaga." }
     end
   end
 

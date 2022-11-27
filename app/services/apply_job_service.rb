@@ -15,9 +15,9 @@ class ApplyJobService < ApplicationService
   private
   
   def apply
-    return false if user.jobs.include?(job)
+    return false if user.jobs&.include?(job)
 
-    user.jobs << job
+    user.jobs << job.to_s
     user.save
 
     return true

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   root "jobs#index"
 
   resources :jobs, only: [:index, :show]
+
+  post "/jobs/:id/user_apply_job", to: "jobs#user_apply_job", as: "apply_job"
 end
