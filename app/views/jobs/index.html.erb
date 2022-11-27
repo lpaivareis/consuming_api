@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <h1>Vagas de emprego</h1>
+
+  <div class="body mt-4">
+
+    <% @jobs.each do |job| %>
+      <div class="row mb-2">
+        <div class="card">
+          <div class="row mb-2">
+            <div class="col-md-2 p-3">
+              <%= image_tag job.clinic.image, class: "card-img-top rounded-3 shadow-sm job-image" %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="mb-3"><%= link_to job.profession, job_path(job.id) %></h3>
+                <p><%= format_value_description(job) %></p>
+                <p><%= format_city(job.clinic) %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class JobsController < ApplicationController
   def index
     @jobs = RequestService.call(:get, "jobs")
   end
