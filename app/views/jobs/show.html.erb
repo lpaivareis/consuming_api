@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        <%= image_tag @job.clinic.image, class: "card-img-top rounded-3 shadow-sm job-image", style: "max-width:416px;max-height:272px" %>
+      </div>
+      <div class="text-center">
+        <%= link_to "Me candidatar", "#", class: "btn btn-primary mt-3" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="description">
+            <h5 class="mb-3">
+              Descrição da vaga
+            </h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae condimentum ex. Pellentesque suscipit est nisi, id malesuada enim viverra nec.
+            </p>
+          </div>
+
+          <div class="description">
+            <h5 class="mb-3">
+              Remuneração
+            </h5>
+            <p>
+              <%= format_remuneration(@job.value, @job.value_period) %>
+            </p>
+          </div>
+
+          <div class="description">
+            <h5 class="mb-3">
+              Local de trabalho
+            </h5>
+            <p>
+              <%= @job.clinic.name %>
+            </p>
+            <p>
+              <%= format_city(@job.clinic) %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
