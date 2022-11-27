@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   serialize :jobs
 
   after_initialize do |user|
-    user.jobs= [] if user.jobs == nil
+    user.jobs = [] if user.jobs.nil?
   end
 
   # Include default devise modules. Others available are:

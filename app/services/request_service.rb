@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RequestService < ApplicationService
   class BadRequest < StandardError; end
 
@@ -21,13 +23,13 @@ class RequestService < ApplicationService
   end
 
   def default_url(path)
-    URI.join(ENV["BASE_URL"], path).to_s
+    URI.join(ENV.fetch("BASE_URL", nil), path).to_s
   end
 
   def default_options
     {
       headers: {
-        'Content-Type' => 'application/json'
+        "Content-Type" => "application/json"
       }
     }
   end

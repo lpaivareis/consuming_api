@@ -1,5 +1,6 @@
-module ApplicationHelper
+# frozen_string_literal: true
 
+module ApplicationHelper
   def format_remuneration(value, value_period)
     return "N/A" if value.nil? || value_period.nil?
 

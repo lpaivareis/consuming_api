@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:user_apply_job]
 
@@ -11,9 +13,9 @@ class JobsController < ApplicationController
 
   def user_apply_job
     if ApplyJobService.call(job_params[:id], current_user.id).present?
-      redirect_to job_path(job_params[:id]), flash:{ notice: "Você se candidatou com sucesso." }
+      redirect_to job_path(job_params[:id]), flash: { notice: "Você se candidatou com sucesso." }
     else
-      redirect_to job_path(job_params[:id]), flash:{ notice: "Você ja está candidatado nessa vaga." }
+      redirect_to job_path(job_params[:id]), flash: { notice: "Você ja está candidatado nessa vaga." }
     end
   end
 

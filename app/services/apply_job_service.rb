@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplyJobService < ApplicationService
   attr_reader :job, :user_id, :user
 
@@ -13,17 +15,17 @@ class ApplyJobService < ApplicationService
   end
 
   private
-  
+
   def apply
     return false if user.jobs&.include?(job)
 
     user.jobs << job.to_s
     user.save
 
-    return true
+    true
   end
 
   def find_user
-    @user = User.find_by_id(user_id)
+    @user = User.find_by(id: user_id)
   end
 end

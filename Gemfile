@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -31,10 +33,16 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 
 # Use HttParty to make API calls
-gem 'httparty', '~> 0.20.0'
+gem "httparty", "~> 0.20.0"
 
 # Use devise for autentication
-gem 'devise', '~> 4.2'
+gem "devise", "~> 4.2"
+
+# Use rubocop for code linting
+gem "rubocop", "~> 1.38"
+
+# Use rubocop-rails for rails linting
+gem "rubocop-rails", "~> 2.17", ">= 2.17.2"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -43,7 +51,7 @@ gem 'devise', '~> 4.2'
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -56,7 +64,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -64,10 +72,10 @@ group :development do
   gem "web-console"
 
   # Use byebug for debugging
-  gem 'byebug', '~> 11.1', '>= 11.1.3'
+  gem "byebug", "~> 11.1", ">= 11.1.3"
 
   # Use awesome_print for debugging
-  gem 'awesome_print', '~> 1.9', '>= 1.9.2'
+  gem "awesome_print", "~> 1.9", ">= 1.9.2"
 
   # Use dotenv to manage environment variables
   gem "dotenv-rails"
