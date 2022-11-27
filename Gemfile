@@ -30,6 +30,9 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+#use HttParty to make API calls
+gem 'httparty', '~> 0.20.0'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -56,6 +59,15 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # Use byebug for debugging
+  gem 'byebug', '~> 11.1', '>= 11.1.3'
+
+  # Use awesome_print for debugging
+  gem 'awesome_print', '~> 1.9', '>= 1.9.2'
+
+  # Use dotenv to manage environment variables
+  gem "dotenv-rails"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
